@@ -150,19 +150,20 @@ struct BST
        
     }
 
-    void removeLeaf(){
-        // implemnetar una funcion que elimine las hojas del arbol
-        if(m_root == nullptr) {
+    Node<T>* removeLeaf(Node<T>* curren){
+        if(curren == nullptr) {
             return nullptr;
         } 
-        if (m_root->m_left == nullptr && m_root->m_right == nullptr) {
-            free(m_root);
+        if (curren->m_left == nullptr &&curren->m_right == nullptr) {
+            free(current);
             return nullptr;
         }
 
-    }
+    void removeLeaf(){
+        // implemnetar una funcion que elimine las hojas del arbol
+        removeLeaf(m_root);
 
-/
+    }
     
     bool isAVL(){
         // Función que verifica si un arbol cumple con las caracteŕisticas de un AVL
